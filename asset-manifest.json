@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-context-tasks-app/static/css/main.c8926fd7.chunk.css",
+    "main.js": "/react-context-tasks-app/static/js/main.0160e121.chunk.js",
+    "main.js.map": "/react-context-tasks-app/static/js/main.0160e121.chunk.js.map",
+    "runtime-main.js": "/react-context-tasks-app/static/js/runtime-main.67d1a1b3.js",
+    "runtime-main.js.map": "/react-context-tasks-app/static/js/runtime-main.67d1a1b3.js.map",
+    "static/css/2.f2512455.chunk.css": "/react-context-tasks-app/static/css/2.f2512455.chunk.css",
+    "static/js/2.bd1597de.chunk.js": "/react-context-tasks-app/static/js/2.bd1597de.chunk.js",
+    "static/js/2.bd1597de.chunk.js.map": "/react-context-tasks-app/static/js/2.bd1597de.chunk.js.map",
+    "index.html": "/react-context-tasks-app/index.html",
+    "static/css/2.f2512455.chunk.css.map": "/react-context-tasks-app/static/css/2.f2512455.chunk.css.map",
+    "static/css/main.c8926fd7.chunk.css.map": "/react-context-tasks-app/static/css/main.c8926fd7.chunk.css.map",
+    "static/js/2.bd1597de.chunk.js.LICENSE.txt": "/react-context-tasks-app/static/js/2.bd1597de.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.67d1a1b3.js",
+    "static/css/2.f2512455.chunk.css",
+    "static/js/2.bd1597de.chunk.js",
+    "static/css/main.c8926fd7.chunk.css",
+    "static/js/main.0160e121.chunk.js"
+  ]
+}
