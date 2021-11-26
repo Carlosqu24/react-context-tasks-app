@@ -18,7 +18,7 @@ body {
 
 /*------------------NAVBAR----------------------*/
 .navbar {
-    height: 100px;
+    height: auto;
 
     background: rgb(29, 29, 29);
     color: #fff;
