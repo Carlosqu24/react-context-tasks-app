@@ -3,15 +3,18 @@ import { useHistory, useParams } from 'react-router';
 
 // CONTEXT
 import { GlobalContext } from '../context/GlobalContext'
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 export const TaskForm = () => {
+      const [notes, setNotes, deleteNote, editNote] = useLocalStorage('notes', []);
 
-      const [form, setForm] = useState({})
-
+      const [form, setForm] = useState({
+            id: Date.now()
+      })
       const { tasks, addTask, editTask } = useContext(GlobalContext);
 
-      const history = useHistory();
 
+      const history = useHistory();
       const { id } = useParams();
 
       useEffect(() => {
@@ -26,8 +29,8 @@ export const TaskForm = () => {
       };
 
       const handleEditButtonClick = () => {
-            
-            editTask(form)
+            editNote(form);
+            editTask(form);
 
             history.push('/');
       }
@@ -35,10 +38,16 @@ export const TaskForm = () => {
       const handleSubmit = (e) => {
             e.preventDefault();
 
-            addTask(form);   
+            setNotes(form)
+            addTask(form); 
+
 
             history.push('/');
       };
+
+     
+
+     
 
       return (
             <form className="form w-50 m-auto mt-5 p-3 text-center" onSubmit={(e) => handleSubmit(e)}>

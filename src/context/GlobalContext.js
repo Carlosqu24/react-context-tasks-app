@@ -1,4 +1,5 @@
 import React, { useState, createContext } from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const initialState = [
             {
@@ -30,7 +31,10 @@ const initialState = [
 export const GlobalContext = createContext(initialState);
 
 export const ContextProvider = ({ children }) => {
-      const [tasks, setTasks] = useState(initialState);
+      
+      const [notes] = useLocalStorage('notes', []);
+      const [tasks, setTasks] = useState(notes);
+      
 
       const addTask = (task) => {
             task.id = Date.now();
@@ -46,8 +50,9 @@ export const ContextProvider = ({ children }) => {
 
       const editTask = (editTask) => {
            
+            //console.log(editTask)
             const newData = tasks.filter(task => task.id != editTask.id);
-
+            //console.log(newData)
             setTasks([...newData, editTask])
       };
 

@@ -3,12 +3,19 @@ import { Link } from 'react-router-dom';
 
 // CONTEXT
 import { GlobalContext } from '../context/GlobalContext'
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 
 export const TasksList = () => {
 
-      const { tasks, deleteTask } = useContext(GlobalContext)
+      const [notes, setNotes, deleteNote] = useLocalStorage('notes', []);
 
+      const { tasks, deleteTask } = useContext(GlobalContext);
+
+      const handleDelete = (id) => {
+            deleteNote(id);
+            deleteTask(id);
+      };
 
       return (
             <div className="p-3">
@@ -27,7 +34,7 @@ export const TasksList = () => {
                                                             className="btn btn-dark"
                                                       >Edit Task</Link>
 
-                                                      <button className="btn btn-danger" onClick={() => deleteTask(task.id)}>
+                                                      <button className="btn btn-danger" onClick={() => handleDelete(task.id)}>
                                                             Delete Task
                                                       </button>
                                                 </div>
